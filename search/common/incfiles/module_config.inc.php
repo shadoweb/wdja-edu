@@ -85,8 +85,7 @@ function wdja_cms_module_list()
       $tmptstr = str_replace('{$id}', ii_get_num($trs['un_id']), $tmptstr);
       $tmptstr = str_replace('{$genre}', $trs['un_genre'], $tmptstr);
       $tmptstr = str_replace('{$module}', '<a href="'.$nurlpre.'/'.$trs['un_genre'].'">['.ii_itake('global.'.$trs['un_genre'].':module.channel_title', 'lng').']</a>', $tmptstr);
-      if ($trs['un_genre'] == 'forum') $tmptstr = str_replace('{$url}', $nurlpre.'/'.$trs['un_genre'].'/?type=detail&sid='.ii_get_num($trs['un_sid']).'&tid='.ii_get_num($trs['un_id']), $tmptstr);
-      else $tmptstr = str_replace('{$url}', $nurlpre.'/'.$trs['un_genre'].'/'.ii_iurl('detail', ii_get_num($trs['un_id']), $turltype), $tmptstr);
+      $tmptstr = str_replace('{$url}', $nurlpre.'/'.$trs['un_genre'].'/'.ii_iurl('detail', ii_get_num($trs['un_id']), $turltype), $tmptstr);
 
       $tmprstr .= $tmptstr;
     }
