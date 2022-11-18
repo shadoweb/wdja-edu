@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml mode="wdja" author="wdja">
+  <configure>
+    <node>item</node>
+    <field>name,tpl_default</field>
+    <base>item_list</base>
+  </configure>
+  <item_list>
+    <item>
+      <name><![CDATA[detail]]></name>
+      <tpl_default><![CDATA[{$=mm_web_head($GLOBALS['nhead'])}
+<div class="list">
+  <h1>{$=ii_itake('global.{$genre}:module.channel_title', 'lng')}</h1>
+</div>
+<div class="detail">
+  <div class="content">
+    <div class="content-left">
+      <div class="content-left-sidebar">
+        <div class="left-sidebar-title"><i class="iconfont icon-microsoft"></i>{$=ii_itake('global.{$genre}:module.channel_title', 'lng')}</div>
+        <ul class="left-sidebar-list">
+          {$=vv_itransfer('old', 'global.aboutus:module.sidebar_list', 'topx=50')}
+        </ul>
+      </div>
+    </div>
+    <div class="content-right">
+      <div class="content-right-con">
+        <div class="right-con-title"><h3><i class="iconfont icon-microsoft"></i>{$=vv_inavigation('{$genre}', '')}</h3></div>
+        <div class="right-con-detail">
+          {$=mm_encode_content(mm_cutepage_content(api_tags_replace_tags($GLOBALS['RS_content'])))}
+          <div class="page">{$=mm_cutepage_content_page_sel($GLOBALS['RS_content'], 'folder=' . $GLOBALS['ncreatefolder'] . ';filetype=' . $GLOBALS['ncreatefiletype'] . ';cutekey={$id};time={$time}')}</div>
+        </div>
+        <div class="tags">{$=api_tags_list({$id})}</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">get_id('sort-{$id}').className = 'on';</script>
+{$=mm_web_foot($GLOBALS['nfoot'])}]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[sidebar_list]]></name>
+      <tpl_default><![CDATA[{@}
+<li id="sort-{$id}">
+    <a href="{$=ii_curl('{$baseurl}', ii_iurl('detail', {$id}, {$urltype}, 'folder={$createfolder};filetype={$createfiletype};time={$time}'))}">{$topic}</a>
+</li>{@}]]></tpl_default>
+    </item>
+  </item_list>
+</xml>

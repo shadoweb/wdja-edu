@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml mode="wdja" author="wdja">
+  <configure>
+    <node>item</node>
+    <field>name,tpl_default</field>
+    <base>item_list</base>
+  </configure>
+  <item_list>
+    <item>
+      <name><![CDATA[navigation]]></name>
+      <tpl_default><![CDATA[
+<a id="basic" href="/support/themes/tutorial/manage.php?type=basic&hspan=basic" target="_self">{$=ii_itake('manage.basic','lng')}</a>
+<a id="extend" href="/support/themes/tutorial/manage.php?type=extend&hspan=extend" target="_self">{$=ii_itake('manage.extend','lng')}</a>
+]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[basic]]></name>
+      <tpl_default><![CDATA[
+<toplink>{$=pp_manage_navigation()}</toplink>
+  <div class="table">
+    <h3>{$=ii_itake('manage.basic','lng')}</h3>
+    <form name="form" method="post" action="?action=basic&backurl={$=urlencode($GLOBALS['nurl'])}&token={$=mm_get_token()}" onsubmit="bfsubmit()">
+    <input type="hidden" name="token" value="{$=mm_get_token()}" />
+      <table cellpadding="10" cellspacing="0" class="tableF">
+        <tbody><tr>
+  <th valign="top"><t>{$=ii_itake('manage.web_slogan','lng')}<r>*</r></t></th>
+  <td><input type="text" name="web_slogan" class="i1" value="{$web_slogan}"><pre><span class="info-1">{$global_web_slogan}</span></pre></td>
+</tr><tr>
+  <th valign="top"><t>{$=ii_itake('manage.head-code','lng')}</t></th>
+  <td><textarea type="text" rows="6" name="head-code" cols="60" class="t1">{$head-code}</textarea><pre><span class="info-1">{$global_head-code}</span></pre></td>
+</tr><tr>
+  <th valign="top"><t>{$=ii_itake('manage.foot-code','lng')}</t></th>
+  <td><textarea type="text" rows="6" name="foot-code" cols="60" class="t1">{$foot-code}</textarea><pre><span class="info-1">{$global_foot-code}</span></pre></td>
+</tr></tbody>
+      </table>
+      <div class="form_button"><button class="b2 submit">{$=ii_itake('global.lng_config.submit','lng')}</button></div>
+    </form>
+      ]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[extend]]></name>
+      <tpl_default><![CDATA[
+<toplink>{$=pp_manage_navigation()}</toplink>
+  <div class="table">
+    <h3>{$=ii_itake('manage.extend','lng')}</h3>
+    <form name="form" method="post" action="?action=extend&backurl={$=urlencode($GLOBALS['nurl'])}&token={$=mm_get_token()}" onsubmit="bfsubmit()">
+    <input type="hidden" name="token" value="{$=mm_get_token()}" />
+      <table cellpadding="10" cellspacing="0" class="tableF">
+        <tbody><tr>
+  <td height="22" colspan="2" align="left" style="margin:0;padding:0;"><h3 style="margin:0;padding:10px 5px;background-color:#eeeeee;">{$=ii_itake('manage.advert','lng')}</h3></td>
+</tr><tr>
+  <th valign="top"><t>{$=ii_itake('manage.advert-switch','lng')}<r>*</r></t></th>
+  <td><span onclick="inputSwitch(this)" class="switch switch-{$advert-switch}" bind="1"><b></b><u></u><em></em><input type="hidden" name="advert-switch" class="val" value="{$advert-switch}" /></span><pre><span class="info-1">{$global_advert-switch}</span></pre></td>
+</tr><tr>
+  <th valign="top"><t>{$=ii_itake('manage.ad-index','lng')}<r>*</r></t></th>
+  <td><textarea type="text" rows="6" name="ad-index" cols="60" class="t1">{$ad-index}</textarea><pre><span class="info-1">{$global_ad-index}</span></pre></td>
+</tr><tr>
+  <th valign="top"><t>{$=ii_itake('manage.ad-list','lng')}<r>*</r></t></th>
+  <td><textarea type="text" rows="6" name="ad-list" cols="60" class="t1">{$ad-list}</textarea><pre><span class="info-1">{$global_ad-list}</span></pre></td>
+</tr><tr>
+  <th valign="top"><t>{$=ii_itake('manage.ad-detail','lng')}<r>*</r></t></th>
+  <td><textarea type="text" rows="6" name="ad-detail" cols="60" class="t1">{$ad-detail}</textarea><pre><span class="info-1">{$global_ad-detail}</span></pre></td>
+</tr><tr>
+  <th valign="top"><t>{$=ii_itake('manage.ad-sidebar','lng')}<r>*</r></t></th>
+  <td><textarea type="text" rows="6" name="ad-sidebar" cols="60" class="t1">{$ad-sidebar}</textarea><pre><span class="info-1">{$global_ad-sidebar}</span></pre></td>
+</tr></tbody>
+      </table>
+      <div class="form_button"><button class="b2 submit">{$=ii_itake('global.lng_config.submit','lng')}</button></div>
+    </form>
+      ]]></tpl_default>
+    </item>
+  </item_list>
+</xml>

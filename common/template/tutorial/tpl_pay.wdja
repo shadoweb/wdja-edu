@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml mode="wdja" author="wdja">
+  <configure>
+    <node>item</node>
+    <field>name,tpl_default</field>
+    <base>item_list</base>
+  </configure>
+  <item_list>
+    <item>
+      <name><![CDATA[index]]></name>
+      <tpl_default><![CDATA[
+      
+      
+      ]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[swiper-slide]]></name>
+      <tpl_default><![CDATA[
+      
+      
+      ]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[links]]></name>
+      <tpl_default><![CDATA[
+      
+      
+      ]]></tpl_default>
+    </item>
+  </item_list>
+</xml>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml mode="wdja" author="wdja">
+  <configure>
+    <node>item</node>
+    <field>name,tpl_default</field>
+    <base>item_list</base>
+  </configure>
+  <item_list>
+    <item>
+      <name><![CDATA[view_lists]]></name>
+      <tpl_default><![CDATA[
+<div class="imgtxt-list">
+  <div class="imgtxt-list-con">
+    <div class="areas"><div class="area-title">{$title}</div></div>
+    <ul>{@}
+    <li>
+  <div class="imgtxt-details">
+      <div class="img"><img src="{$=#nurlpre}/{$source}/{$image}"></div>
+      <a class="view" href="{$=#nurlpre}/{$source}/{$url}"><span class="title">{$topic}</span></a>
+    </div>
+</li>{@}
+    </ul>
+  </div>
+</div>
+]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[view_inputs]]></name>
+      <tpl_default><![CDATA[
+    <div class="view_pop_lists">
+      <h3><i class="iconfont icon-viewgrid"></i>{$title}</h3>
+      <ul>
+        {@}
+        <li class="view_pop_infos"><a href="{$=#nurlpre}/{$source}/{$url}"><img src="{$=#nurlpre}/{$source}/{$image}"><div class="view_pop_title"><strong>{$topic}</strong><p>{$description}</p></div></a></li>
+        {@}
+      </ul>
+    </div>
+]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[view_input]]></name>
+      <tpl_default><![CDATA[
+    <div class="view_input">
+       <span><i class="iconfont icon-viewgrid"></i>{$title}</span>
+        {@}
+        <a href="{$=#nurlpre}/{$source}/{$url}"><strong>{$topic}</strong></a>
+        {@}
+    </div>
+]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[view_related_genrelist]]></name>
+      <tpl_default><![CDATA[
+    <div class="view_pop_lists">
+      <h3><i class="iconfont icon-viewgrid"></i>{$title}</h3>
+      <ul>
+        {@}
+        <li class="view_pop_infos"><a href="{$=#nurlpre}/{$genre}/{$url}"><div class="view_pop_title"><strong>{$topic}</strong></div></a></li>
+        {@}
+      </ul>
+    </div>
+]]></tpl_default>
+    </item>
+  </item_list>
+</xml>

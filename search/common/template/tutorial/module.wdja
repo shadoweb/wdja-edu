@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml mode="wdja" author="wdja">
+  <configure>
+    <node>item</node>
+    <field>name,tpl_default</field>
+    <base>item_list</base>
+  </configure>
+  <item_list>
+    <item>
+      <name><![CDATA[list]]></name>
+      <tpl_default><![CDATA[{$=mm_web_head($GLOBALS['nhead'])}
+<div class="list">
+  <h1>{$=ii_itake('global.{$genre}:module.channel_title', 'lng')}</h1>
+  <div class="search clear" style="margin:1rem .25rem  1rem auto;">
+      <div class="search-con">
+        <form method="get" id="searchform" name="search" action="{$=ii_get_actual_route('search')}"> 
+          <input type="hidden" name="type" value="list">
+          <input type="text" value="{$keyword}" class="i1" name="keyword" placeholder="{$=ii_itake('global.lng_config.keyword', 'lng')}" required="" /> 
+          <button type="submit" id="searchsubmit" class="b3">{$=ii_itake('global.lng_config.search','lng')}</button>
+        </form>
+      </div>
+  </div>
+      <ul style="width:100%;display:block;margin: 5px 0;overflow: hidden;">{$=vv_itransfer('new', 'global.search:module.search-new', 'bsql= select max(s_topic) as s_topic,max(s_time) from wdja_search group by s_topic order by count(s_topic) desc limit 0,10')}</ul>
+  <div class="imgtxt-list">
+    <div class="imgtxt-list-con">
+      <ul>
+        {@recurrence_ida}
+        <li>
+          <div class="imgtxt-details">
+           <a class="view" href="{$url}"> <span class="title" style="padding-left:15px;">{$topic}</span></a>
+          </div>
+        </li>
+        {@recurrence_ida}
+      </ul>
+    </div>
+  </div>
+  <div id="cutepage" class="listpage">{$cpagestr}</div>
+  <nav class="foot-nav">{$=vv_inavigation('{$genre}', 'strers=module')}</nav>
+</div>
+{$=mm_web_foot($GLOBALS['nfoot'])}]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[index]]></name>
+      <tpl_default><![CDATA[{$=mm_web_head($GLOBALS['nhead'])}
+<div class="list">
+  <h1>{$=ii_itake('global.{$genre}:module.channel_title', 'lng')}</h1>
+  <div class="search clear" style="margin:1rem .25rem  1rem auto;">
+      <div class="search-con">
+        <form method="get" id="searchform" name="search" action="{$=ii_get_actual_route('search')}"> 
+          <input type="hidden" name="type" value="list">
+          <input type="text" value="{$keyword}" class="i1" name="keyword" placeholder="{$=ii_itake('global.lng_config.keyword', 'lng')}" required="" /> 
+          <button type="submit" id="searchsubmit" class="b3">{$=ii_itake('global.lng_config.search','lng')}</button>
+        </form>
+      </div>
+  </div>
+  <ul style="width:100%;overflow: hidden;">
+     {$=vv_itransfer('new', 'global.search:module.search-new', 'bsql= select max(s_topic) as s_topic,max(s_time) from wdja_search group by s_topic order by count(s_topic) desc limit 0,100')}
+  </ul>
+  <div class="clear"></div>
+  <nav class="foot-nav">{$=vv_inavigation('{$genre}', 'strers=module')}</nav>
+</div>
+{$=mm_web_foot($GLOBALS['nfoot'])}]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[search-new]]></name>
+      <tpl_default><![CDATA[{@}
+<li style="float:left;padding:2px 5px;width:auto;border:0;"><a href="{$=ii_get_actual_route('search')}/?type=list&keyword={$topic}">{$topic}</a></li>
+{@}]]></tpl_default>
+    </item>
+  </item_list>
+</xml>

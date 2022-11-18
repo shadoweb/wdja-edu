@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml mode="wdja" author="wdja">
+  <configure>
+    <node>item</node>
+    <field>name,tpl_default</field>
+    <base>item_list</base>
+  </configure>
+  <item_list>
+    <item>
+      <name><![CDATA[index]]></name>
+      <tpl_default><![CDATA[{$=mm_web_head($GLOBALS['nhead'])}
+{$=ii_ireplace('global.module.swiper','tpl')}
+{$=ii_ireplace('global.module.sort-list','tpl')}
+{$=ii_ireplace('global.module.tutorial-list','tpl')}
+{$=ii_ireplace('global.module.text-list','tpl')}
+{$=mm_web_foot($GLOBALS['nfoot'])}]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[swiper]]></name>
+      <tpl_default><![CDATA[<div class="swiper">
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+       {$=vv_itransfer('order', 'swiper-slide', 'topx='.ii_itake('global.support/theme:home.slide_num','lng').';tnum=30;genre=support/slide')}
+    </div>
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div> 
+</div>]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[sort-list]]></name>
+      <tpl_default><![CDATA[<div class="sort-list">
+  <div class="sort-list-con">
+    <div class="areas"><div class="area-title">热门分类</div></div>
+    <ul>
+      {$=vv_isort('tutorial', 'tpl=sort-list;topx=10')}
+    </ul>
+  </div>
+</div>]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[tutorial-list]]></name>
+      <tpl_default><![CDATA[<div class="imgtxt-list">
+  <div class="imgtxt-list-con">
+    <div class="areas"><div class="area-title">{$=ii_itake('global.tutorial:module.channel_title', 'lng')}</div></div>
+    <ul>
+      {$=vv_itransfer('top', 'imgtxt-list', 'topx=10;tnum=30;genre=tutorial')}
+    </ul>
+  </div>
+</div>]]></tpl_default>
+    </item>
+    
+    <item>
+      <name><![CDATA[text-list]]></name>
+      <tpl_default><![CDATA[<div class="imgtxt-list">
+  <div class="imgtxt-list-con">
+    <div class="areas"><div class="area-title">{$=ii_itake('global.article:module.channel_title', 'lng')}</div></div>
+    <ul>
+      {$=vv_itransfer('top', 'text-list', 'topx=10;tnum=30;genre=article')}
+    </ul>
+  </div>
+</div>]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[links]]></name>
+      <tpl_default><![CDATA[<div class="links">
+  <div class="links-con">
+    <div class="links-title">
+      <strong>
+        {$=ii_itake('global.support/linktext:manage.channel_title', 'lng')}
+      </strong>
+    </div>
+    <ul>
+      {$=vv_itransfer('new', 'link', 'topx=20;tnum=30;genre=support/linktext')}
+    </ul>
+  </div>
+</div>]]></tpl_default>
+    </item>
+  </item_list>
+</xml>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml mode="wdja" author="wdja">
+  <configure>
+    <node>item</node>
+    <field>name,tpl_default</field>
+    <base>item_list</base>
+  </configure>
+  <item_list>
+    <item>
+      <name><![CDATA[list]]></name>
+      <tpl_default><![CDATA[{$=mm_web_head($GLOBALS['nhead'])}
+<div class="list">
+  <h1>{$=ii_itake('global.{$genre}:module.channel_title', 'lng')}</h1>
+  <div class="imgtxt-list">
+    <div class="imgtxt-list-con">
+      <ul>
+        {@recurrence_ida}
+        <li>
+          <div class="imgtxt-details">
+           <a class="view" href="{$url}"><span class="title" data-num="{$sum}" style="padding-left:15px;">{$topic}</span></a>
+          </div>
+        </li>
+        {@recurrence_ida}
+      </ul>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div id="cutepage" class="listpage">{$cpagestr}</div>
+  <nav class="foot-nav">{$=vv_inavigation('{$genre}', 'strers=module;strurl={$genre}')}</nav>
+</div>
+<div class="clear"></div>
+{$=mm_web_foot($GLOBALS['nfoot'])}]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[detail]]></name>
+      <tpl_default><![CDATA[{$=mm_web_head($GLOBALS['nhead'])}
+<div class="list">
+  <h1>{$topic}</h1>
+  <div class="imgtxt-list">
+    <div class="imgtxt-list-con">
+      <ul>
+        {@recurrence_ida}
+        <li>
+          <div class="imgtxt-details">
+           <a class="view" href="{$url}"> <span class="title" style="padding-left:15px;">{$topic}</span></a>
+          </div>
+        </li>
+        {@recurrence_ida}
+      </ul>
+    </div>
+  </div>
+  <div id="cutepage" class="listpage">{$cpagestr}</div>
+  <nav class="foot-nav">{$=vv_inavigation('{$genre}', 'strers=module;strurl={$genre}')}</nav>
+</div>
+{$=mm_web_foot($GLOBALS['nfoot'])}]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[detail_nodata]]></name>
+      <tpl_default><![CDATA[{$=mm_web_head($GLOBALS['nhead'])}
+<div class="detail">
+  <h1>{$topic}</h1>
+  <div class="data">{$=ii_itake('global.lng_config.count','lng')}:<span>{$count}</span></div>
+  <div class="content">
+    {$=mm_encode_content(mm_cutepage_content(api_tags_replace_tags($GLOBALS['RS_content'])))}
+    <div class="page">{$=mm_cutepage_content_page_sel($GLOBALS['RS_content'], 'folder=' . $GLOBALS['ncreatefolder'] . ';filetype=' . $GLOBALS['ncreatefiletype'] . ';cutekey={$id};time={$time}')}</div>
+  </div>
+  {$=api_tags_genre_lists()}
+  <div class="foot-nav">{$=vv_inavigation('{$genre}', 'strers=module;strurl={$genre}')}</div>
+</div>
+{$=mm_web_foot($GLOBALS['nfoot'])}]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[api_tags_list]]></name>
+      <tpl_default><![CDATA[
+                     <a style="width:auto;" href="{$turl}" title="{$tag}">{$tag}</a>
+]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[api_tags_all]]></name>
+      <tpl_default><![CDATA[
+                     <a style="width:auto;" href="{$turl}" title="{$tag}">{$tag}</a>
+]]></tpl_default>
+    </item>
+    <item>
+      <name><![CDATA[api_tags_genre_list]]></name>
+      <tpl_default><![CDATA[
+<div class="imgtxt-list">
+  <div class="imgtxt-list-con">
+    <div class="areas"><div class="area-title">{$=ii_itake('global.{$genre}:module.channel_title', 'lng')}</div></div>
+    <ul>
+      {@}<li>
+        <div class="imgtxt-details">
+            <a class="view" href="{$=#nurlpre}/{$genre}/{$=ii_iurl('detail', {$id}, {$urltype})}"><span class="title" style="padding-left:15px;">{$topic}</span></a>
+        </div>
+      </li>{@}
+    </ul>
+  </div>
+</div>
+]]></tpl_default>
+    </item>
+  </item_list>
+</xml>

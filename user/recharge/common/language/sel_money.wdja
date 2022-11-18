@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml mode="wdja" author="wdja">
+  <configure>
+    <node>item</node>
+    <field>value,chinese</field>
+    <base>sel_list</base>
+  </configure>
+  <sel_list>
+    <item>
+      <value><![CDATA[1]]></value>
+      <chinese><![CDATA[1元]]></chinese>
+    </item>
+    <item>
+      <value><![CDATA[5]]></value>
+      <chinese><![CDATA[5元]]></chinese>
+    </item>
+    <item>
+      <value><![CDATA[20]]></value>
+      <chinese><![CDATA[20元]]></chinese>
+    </item>
+    <item>
+      <value><![CDATA[50]]></value>
+      <chinese><![CDATA[50元]]></chinese>
+    </item>
+    <item>
+      <value><![CDATA[200]]></value>
+      <chinese><![CDATA[200元]]></chinese>
+    </item>
+    <item>
+      <value><![CDATA[500]]></value>
+      <chinese><![CDATA[500元]]></chinese>
+    </item>
+  </sel_list>
+</xml>

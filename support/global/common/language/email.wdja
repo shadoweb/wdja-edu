@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml mode="wdja" author="wdja">
+  <configure>
+    <node>item</node>
+    <field>disinfo,chinese</field>
+    <base>language_list</base>
+  </configure>
+  <language_list>
+    <item>
+      <disinfo><![CDATA[message_mail]]></disinfo>
+      <chinese><![CDATA[sh***web@qq.com]]></chinese>
+    </item>
+    <item>
+      <disinfo><![CDATA[message_title]]></disinfo>
+      <chinese><![CDATA[WDJA新留言提醒]]></chinese>
+    </item>
+    <item>
+      <disinfo><![CDATA[message_body]]></disinfo>
+      <chinese><![CDATA[WDJA网站有新留言啦!]]></chinese>
+    </item>
+  </language_list>
+</xml>
