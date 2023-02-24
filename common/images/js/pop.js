@@ -120,7 +120,7 @@ function edit_ok(strid){
     }
 }
 
-function insert_img(strid, strurl, strntype, strtype, strbase)
+function insert_file(strid, strurl, strntype, strtype, strbase)
 {
 var tstrtype;
 var file_arr = strurl.split("#:#");
