@@ -71,6 +71,10 @@
       <chinese><![CDATA[选项]]></chinese>
     </item>
     <item>
+      <disinfo><![CDATA[order]]></disinfo>
+      <chinese><![CDATA[排序]]></chinese>
+    </item>
+    <item>
       <disinfo><![CDATA[createjs]]></disinfo>
       <chinese><![CDATA[在当前所列条件下创建属性JS]]></chinese>
     </item>
